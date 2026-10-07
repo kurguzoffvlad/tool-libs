@@ -1,0 +1,9 @@
+[submodule "projects/tool-dom"]
+	path = projects/tool-dom
+	url = https://github.com/kurguzoffvlad/tool-dom.git
+[submodule "projects/tool-exchange"]
+	path = projects/tool-exchange
+	url = https://github.com/kurguzoffvlad/tool-exchange.git
+[submodule "projects/tool-width-page"]
+	path = projects/tool-width-page
+	url = https://github.com/kurguzoffvlad/tool-width-page.git
