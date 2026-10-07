@@ -2,11 +2,33 @@
   "name": "tool-libs",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
+    "dev": "concurrently \"ng build tool-dom --watch\" \"ng build tool-exchange --watch\" \"ng build tool-width-page --watch\" \"ng serve --open\"",
+    "build:libs": "ng build tool-dom && ng build tool-exchange && ng build tool-width-page",
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+
+    "ver:dom:patch": "npm version patch --prefix projects/tool-dom",
+    "ver:dom:minor": "npm version minor --prefix projects/tool-dom",
+    "ver:dom:major": "npm version major --prefix projects/tool-dom",
+    "publish:dom": "cd projects/tool-dom && git push --follow-tags && cd ../.. && ng build tool-dom && cd dist/tool-dom && npm publish --access public",
+    "release:dom:patch": "npm run ver:dom:patch && npm run publish:dom",
+    "release:dom:minor": "npm run ver:dom:minor && npm run publish:dom",
+    "release:dom:major": "npm run ver:dom:major && npm run publish:dom",
+
+    "ver:exchange:patch": "npm version patch --prefix projects/tool-exchange",
+    "ver:exchange:minor": "npm version minor --prefix projects/tool-exchange",
+    "ver:exchange:major": "npm version major --prefix projects/tool-exchange",
+    "publish:exchange": "cd projects/tool-exchange && git push --follow-tags && cd ../.. && ng build tool-exchange && cd dist/tool-exchange && npm publish --access public",
+    "release:exchange:patch": "npm run ver:exchange:patch && npm run publish:exchange",
+    "release:exchange:minor": "npm run ver:exchange:minor && npm run publish:exchange",
+    "release:exchange:major": "npm run ver:exchange:major && npm run publish:exchange",
+
+    "ver:width:patch": "npm version patch --prefix projects/tool-width-page",
+    "ver:width:minor": "npm version minor --prefix projects/tool-width-page",
+    "ver:width:major": "npm version major --prefix projects/tool-width-page",
+    "publish:width": "cd projects/tool-width-page && git push --follow-tags && cd ../.. && ng build tool-width-page && cd dist/tool-width-page && npm publish --access public",
+    "release:width:patch": "npm run ver:width:patch && npm run publish:width",
+    "release:width:minor": "npm run ver:width:minor && npm run publish:width",
+    "release:width:major": "npm run ver:width:major && npm run publish:width"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +49,7 @@
     "@angular/cli": "~15.2.11",
     "@angular/compiler-cli": "^15.2.0",
     "@types/jasmine": "~4.3.0",
+    "concurrently": "^9.2.4",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
