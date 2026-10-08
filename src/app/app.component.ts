@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToolConfigToLibService } from 'tool-config-to-lib';
 
+
 interface LibOption {
   value: string;
   label: string;
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     const str = this.lib.doSomething(); // → console: 'called'
-    console.log('str', str)
+    console.log('str', str);
   }
 
   onLibChange(value: string): void {
