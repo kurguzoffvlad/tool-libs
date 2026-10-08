@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToolConfigToLibService } from 'tool-config-to-lib';
 
 interface LibOption {
   value: string;
@@ -11,7 +12,8 @@ interface LibOption {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   libraries: LibOption[] = [
     { value: 'tool-config-to-lib', label: 'tool-config-to-lib' },
     { value: 'tool-dom',           label: 'tool-dom' },
@@ -21,7 +23,15 @@ export class AppComponent {
 
   selectedLib = 'tool-config-to-lib';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private lib: ToolConfigToLibService
+  ) {}
+
+  ngOnInit() {
+    const str = this.lib.doSomething(); // → console: 'called'
+    console.log('str', str)
+  }
 
   onLibChange(value: string): void {
     this.selectedLib = value;

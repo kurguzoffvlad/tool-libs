@@ -8,7 +8,12 @@ import { AppComponent } from './app.component';
 import { ToolDomModule } from 'tool-dom';
 import { ToolExchangeModule } from 'tool-exchange';
 import { ToolWidthPageModule } from 'tool-width-page';
-import { ToolConfigToLibModule } from 'tool-config-to-lib';
+import { ToolConfigToLibModule, LibConfig } from 'tool-config-to-lib';
+
+const config: LibConfig = {
+  apiUrl: 'https://api.example.com',
+  log: (m: any) => console.log('[LIB]', m)
+};
 
 @NgModule({
   declarations: [
@@ -21,7 +26,7 @@ import { ToolConfigToLibModule } from 'tool-config-to-lib';
     ToolDomModule,
     ToolExchangeModule,
     ToolWidthPageModule,
-    ToolConfigToLibModule,
+    ToolConfigToLibModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]
