@@ -5,6 +5,7 @@
     "build:libs": "ng build tool-dom && ng build tool-exchange && ng build tool-width-page && ng build tool-config-to-lib",
     "dev": "concurrently \"ng build tool-dom --watch\" \"ng build tool-exchange --watch\" \"ng build tool-width-page --watch\" \"ng build tool-config-to-lib --watch\" \"ng serve --open\"",
     "start": "ng serve",
+    
     "push:libs": "git push --follow-tags",
 
     "ver:dom:patch": "npm version patch --prefix projects/tool-dom",
