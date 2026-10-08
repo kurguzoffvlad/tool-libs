@@ -7,3 +7,6 @@
 [submodule "projects/tool-width-page"]
 	path = projects/tool-width-page
 	url = https://github.com/kurguzoffvlad/tool-width-page.git
+[submodule "projects/tool-config-to-lib"]
+	path = projects/tool-config-to-lib
+	url = https://github.com/kurguzoffvlad/tool-config-to-lib.git
