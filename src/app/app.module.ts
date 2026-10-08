@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ToolDomModule } from 'tool-dom';
 import { ToolExchangeModule } from 'tool-exchange';
 import { ToolWidthPageModule } from 'tool-width-page';
+import { ToolConfigToLibModule } from 'tool-config-to-lib';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ToolWidthPageModule } from 'tool-width-page';
     ToolDomModule,
     ToolExchangeModule,
     ToolWidthPageModule,
+    ToolConfigToLibModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

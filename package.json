@@ -2,9 +2,11 @@
   "name": "tool-libs",
   "version": "0.0.0",
   "scripts": {
-    "dev": "concurrently \"ng build tool-dom --watch\" \"ng build tool-exchange --watch\" \"ng build tool-width-page --watch\" \"ng serve --open\"",
-    "build:libs": "ng build tool-dom && ng build tool-exchange && ng build tool-width-page",
+    "build:libs": "ng build tool-dom && ng build tool-exchange && ng build tool-width-page && ng build tool-config-to-lib",
+    "dev": "concurrently \"ng build tool-dom --watch\" \"ng build tool-exchange --watch\" \"ng build tool-width-page --watch\" \"ng build tool-config-to-lib --watch\" \"ng serve --open\"",
     "start": "ng serve",
+
+    "push:libs": "git push --follow-tags",
 
     "ver:dom:patch": "npm version patch --prefix projects/tool-dom",
     "ver:dom:minor": "npm version minor --prefix projects/tool-dom",
@@ -28,7 +30,15 @@
     "publish:width": "cd projects/tool-width-page && git push --follow-tags && cd ../.. && ng build tool-width-page && cd dist/tool-width-page && npm publish --access public",
     "release:width:patch": "npm run ver:width:patch && npm run publish:width",
     "release:width:minor": "npm run ver:width:minor && npm run publish:width",
-    "release:width:major": "npm run ver:width:major && npm run publish:width"
+    "release:width:major": "npm run ver:width:major && npm run publish:width",
+
+    "ver:config:patch": "npm version patch --prefix projects/tool-config-to-lib",
+    "ver:config:minor": "npm version minor --prefix projects/tool-config-to-lib",
+    "ver:config:major": "npm version major --prefix projects/tool-config-to-lib",
+    "publish:config": "cd projects/tool-config-to-lib && git push --follow-tags && cd ../.. && ng build tool-config-to-lib && cd dist/tool-config-to-lib && npm publish --access public",
+    "release:config:patch": "npm run ver:config:patch && npm run publish:config",
+    "release:config:minor": "npm run ver:config:minor && npm run publish:config",
+    "release:config:major": "npm run ver:config:major && npm run publish:config"
   },
   "private": true,
   "dependencies": {

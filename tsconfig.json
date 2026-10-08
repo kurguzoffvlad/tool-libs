@@ -6,11 +6,8 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "dom": [
-        "dist/dom"
-      ],
-      "exchange": [
-        "dist/exchange"
+      "tool-config-to-lib": [
+        "dist/tool-config-to-lib"
       ],
       "tool-dom": [
         "dist/tool-dom"
