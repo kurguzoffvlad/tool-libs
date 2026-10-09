@@ -9,12 +9,8 @@ import { AppComponent } from './app.component';
 import { ToolDomModule } from 'tool-dom';
 import { ToolExchangeModule } from 'tool-exchange';
 import { ToolWidthPageModule } from 'tool-width-page';
-import { ToolConfigToLibModule, IConfigToLib } from 'tool-config-to-lib';
-
-const config: IConfigToLib = {
-  apiUrl: 'https://api.example.com',
-  log: (m: any) => console.log('!!! Из приложения конфиг - ', m)
-};
+import { ToolConfigToLibModule } from 'tool-config-to-lib';
+import { configFromApp } from "./tool-config-to-lib/tool-config-to-lib.interface";
 
 @NgModule({
   declarations: [
@@ -27,7 +23,7 @@ const config: IConfigToLib = {
     ToolDomModule,
     ToolExchangeModule,
     ToolWidthPageModule,
-    ToolConfigToLibModule.forRoot(config)
+    ToolConfigToLibModule.forRoot(configFromApp)
   ],
   providers: [],
   bootstrap: [AppComponent]
