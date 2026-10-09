@@ -9,11 +9,11 @@ import { AppComponent } from './app.component';
 import { ToolDomModule } from 'tool-dom';
 import { ToolExchangeModule } from 'tool-exchange';
 import { ToolWidthPageModule } from 'tool-width-page';
-import { ToolConfigToLibModule, LibConfig } from 'tool-config-to-lib';
+import { ToolConfigToLibModule, IConfigToLib } from 'tool-config-to-lib';
 
-const config: LibConfig = {
+const config: IConfigToLib = {
   apiUrl: 'https://api.example.com',
-  log: (m: any) => console.log('[LIB]', m)
+  log: (m: any) => console.log('!!! Из приложения конфиг - ', m)
 };
 
 @NgModule({
