@@ -2,39 +2,49 @@
   "name": "tool-libs",
   "version": "0.0.0",
   "scripts": {
-    "dev": "concurrently \"ng build tool-dom --watch\" \"ng build tool-exchange --watch\" \"ng build tool-width-page --watch\" \"ng build tool-config-to-lib --watch\" \"ng serve --open\"",
-    "PROD-http://192.168.50.245:4343": "powershell -command \"$ip = (Get-NetIPAddress | Where-Object { $_.AddressFamily -eq 'IPv4' -and $_.PrefixOrigin -eq 'Dhcp' }).IPAddress; echo ('Access on: http://' + $ip + ':4343')\" && ng serve --host 0.0.0.0 --port 4343",
+    "DEV": "concurrently \"ng build tool-dom --watch\" \"ng build tool-exchange --watch\" \"ng build tool-width-page --watch\" \"ng build tool-config-to-lib --watch\" \"ng serve --open\"",
+    "PROD-HTTP": "powershell -NoProfile -Command \"$ip = (Get-NetIPAddress | Where-Object { $_.AddressFamily -eq 'IPv4' -and $_.PrefixOrigin -eq 'Dhcp' }).IPAddress; $url = 'http://' + $ip + ':4343'; Write-Host ('Access on: ' + $url); Start-Job { Start-Sleep -Seconds 8; Start-Process $args[0] } -ArgumentList $url | Out-Null; ng serve --host 0.0.0.0 --port 4343\"",
     "build:libs": "ng build tool-dom && ng build tool-exchange && ng build tool-width-page && ng build tool-config-to-lib",
     "start": "ng serve",
+
     "push:libs": "git push --follow-tags",
-    "ver:dom:patch": "npm version patch --prefix projects/tool-dom",
-    "ver:dom:minor": "npm version minor --prefix projects/tool-dom",
-    "ver:dom:major": "npm version major --prefix projects/tool-dom",
-    "publish:dom": "cd projects/tool-dom && git push --follow-tags && cd ../.. && ng build tool-dom && cd dist/tool-dom && npm publish --access public",
-    "release:dom:patch": "npm run ver:dom:patch && npm run publish:dom",
-    "release:dom:minor": "npm run ver:dom:minor && npm run publish:dom",
-    "release:dom:major": "npm run ver:dom:major && npm run publish:dom",
-    "ver:exchange:patch": "npm version patch --prefix projects/tool-exchange",
-    "ver:exchange:minor": "npm version minor --prefix projects/tool-exchange",
-    "ver:exchange:major": "npm version major --prefix projects/tool-exchange",
-    "publish:exchange": "cd projects/tool-exchange && git push --follow-tags && cd ../.. && ng build tool-exchange && cd dist/tool-exchange && npm publish --access public",
-    "release:exchange:patch": "npm run ver:exchange:patch && npm run publish:exchange",
-    "release:exchange:minor": "npm run ver:exchange:minor && npm run publish:exchange",
-    "release:exchange:major": "npm run ver:exchange:major && npm run publish:exchange",
-    "ver:width:patch": "npm version patch --prefix projects/tool-width-page",
-    "ver:width:minor": "npm version minor --prefix projects/tool-width-page",
-    "ver:width:major": "npm version major --prefix projects/tool-width-page",
-    "publish:width": "cd projects/tool-width-page && git push --follow-tags && cd ../.. && ng build tool-width-page && cd dist/tool-width-page && npm publish --access public",
-    "release:width:patch": "npm run ver:width:patch && npm run publish:width",
-    "release:width:minor": "npm run ver:width:minor && npm run publish:width",
-    "release:width:major": "npm run ver:width:major && npm run publish:width",
-    "ver:config:patch": "npm version patch --prefix projects/tool-config-to-lib",
-    "ver:config:minor": "npm version minor --prefix projects/tool-config-to-lib",
-    "ver:config:major": "npm version major --prefix projects/tool-config-to-lib",
+
     "publish:config": "cd projects/tool-config-to-lib && git push --follow-tags && cd ../.. && ng build tool-config-to-lib && cd dist/tool-config-to-lib && npm publish --access public",
-    "release:config:patch": "npm run ver:config:patch && npm run publish:config",
+    "publish:dom": "cd projects/tool-dom && git push --follow-tags && cd ../.. && ng build tool-dom && cd dist/tool-dom && npm publish --access public",
+    "publish:exchange": "cd projects/tool-exchange && git push --follow-tags && cd ../.. && ng build tool-exchange && cd dist/tool-exchange && npm publish --access public",
+    "publish:width": "cd projects/tool-width-page && git push --follow-tags && cd ../.. && ng build tool-width-page && cd dist/tool-width-page && npm publish --access public",
+
+    "release:config:major": "npm run ver:config:major && npm run publish:config",
     "release:config:minor": "npm run ver:config:minor && npm run publish:config",
-    "release:config:major": "npm run ver:config:major && npm run publish:config"
+    "release:config:patch": "npm run ver:config:patch && npm run publish:config",
+
+    "release:dom:major": "npm run ver:dom:major && npm run publish:dom",
+    "release:dom:minor": "npm run ver:dom:minor && npm run publish:dom",
+    "release:dom:patch": "npm run ver:dom:patch && npm run publish:dom",
+
+    "release:exchange:major": "npm run ver:exchange:major && npm run publish:exchange",
+    "release:exchange:minor": "npm run ver:exchange:minor && npm run publish:exchange",
+    "release:exchange:patch": "npm run ver:exchange:patch && npm run publish:exchange",
+
+    "release:width:major": "npm run ver:width:major && npm run publish:width",
+    "release:width:minor": "npm run ver:width:minor && npm run publish:width",
+    "release:width:patch": "npm run ver:width:patch && npm run publish:width",
+
+    "ver:config:major": "npm version major --prefix projects/tool-config-to-lib",
+    "ver:config:minor": "npm version minor --prefix projects/tool-config-to-lib",
+    "ver:config:patch": "npm version patch --prefix projects/tool-config-to-lib",
+
+    "ver:dom:major": "npm version major --prefix projects/tool-dom",
+    "ver:dom:minor": "npm version minor --prefix projects/tool-dom",
+    "ver:dom:patch": "npm version patch --prefix projects/tool-dom",
+
+    "ver:exchange:major": "npm version major --prefix projects/tool-exchange",
+    "ver:exchange:minor": "npm version minor --prefix projects/tool-exchange",
+    "ver:exchange:patch": "npm version patch --prefix projects/tool-exchange",
+
+    "ver:width:major": "npm version major --prefix projects/tool-width-page",
+    "ver:width:minor": "npm version minor --prefix projects/tool-width-page",
+    "ver:width:patch": "npm version patch --prefix projects/tool-width-page"
   },
   "private": true,
   "dependencies": {

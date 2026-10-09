@@ -33,6 +33,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     const str = this.lib.doSomething(); // → console: 'called'
     console.log('str', str);
+
+    // для red нужно было отдельно импортировать в dependencies библиотеку 'tool-islocalhost'
     red('isLogLocalhost ===', isLogLocalhost);
   }
 
