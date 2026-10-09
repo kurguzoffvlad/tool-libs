@@ -5,9 +5,7 @@
     "build:libs": "ng build tool-dom && ng build tool-exchange && ng build tool-width-page && ng build tool-config-to-lib",
     "dev": "concurrently \"ng build tool-dom --watch\" \"ng build tool-exchange --watch\" \"ng build tool-width-page --watch\" \"ng build tool-config-to-lib --watch\" \"ng serve --open\"",
     "start": "ng serve",
-
     "push:libs": "git push --follow-tags",
-
     "ver:dom:patch": "npm version patch --prefix projects/tool-dom",
     "ver:dom:minor": "npm version minor --prefix projects/tool-dom",
     "ver:dom:major": "npm version major --prefix projects/tool-dom",
@@ -15,7 +13,6 @@
     "release:dom:patch": "npm run ver:dom:patch && npm run publish:dom",
     "release:dom:minor": "npm run ver:dom:minor && npm run publish:dom",
     "release:dom:major": "npm run ver:dom:major && npm run publish:dom",
-
     "ver:exchange:patch": "npm version patch --prefix projects/tool-exchange",
     "ver:exchange:minor": "npm version minor --prefix projects/tool-exchange",
     "ver:exchange:major": "npm version major --prefix projects/tool-exchange",
@@ -23,7 +20,6 @@
     "release:exchange:patch": "npm run ver:exchange:patch && npm run publish:exchange",
     "release:exchange:minor": "npm run ver:exchange:minor && npm run publish:exchange",
     "release:exchange:major": "npm run ver:exchange:major && npm run publish:exchange",
-
     "ver:width:patch": "npm version patch --prefix projects/tool-width-page",
     "ver:width:minor": "npm version minor --prefix projects/tool-width-page",
     "ver:width:major": "npm version major --prefix projects/tool-width-page",
@@ -31,7 +27,6 @@
     "release:width:patch": "npm run ver:width:patch && npm run publish:width",
     "release:width:minor": "npm run ver:width:minor && npm run publish:width",
     "release:width:major": "npm run ver:width:major && npm run publish:width",
-
     "ver:config:patch": "npm version patch --prefix projects/tool-config-to-lib",
     "ver:config:minor": "npm version minor --prefix projects/tool-config-to-lib",
     "ver:config:major": "npm version major --prefix projects/tool-config-to-lib",
@@ -51,8 +46,9 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "rxjs": "~7.8.0",
+    "tool-config-to-lib": "0.0.3",
+    "tool-islocalhost": "0.0.3",
     "tool-log": "0.0.14",
-    "tool-config-to-lib": "^0.0.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

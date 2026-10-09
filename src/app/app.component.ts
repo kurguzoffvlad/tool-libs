@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToolConfigToLibService } from 'tool-config-to-lib';
+import { red } from 'tool-log';
 
 
 interface LibOption {
@@ -32,6 +33,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     const str = this.lib.doSomething(); // → console: 'called'
     console.log('str', str);
+    red('tool-log');
   }
 
   onLibChange(value: string): void {
