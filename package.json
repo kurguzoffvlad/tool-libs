@@ -4,6 +4,7 @@
   "scripts": {
     "build:libs": "ng build tool-dom && ng build tool-exchange && ng build tool-width-page && ng build tool-config-to-lib",
     "dev": "concurrently \"ng build tool-dom --watch\" \"ng build tool-exchange --watch\" \"ng build tool-width-page --watch\" \"ng build tool-config-to-lib --watch\" \"ng serve --open\"",
+    "http://192.168.50.245:4343": "powershell -command \"$ip = (Get-NetIPAddress | Where-Object { $_.AddressFamily -eq 'IPv4' -and $_.PrefixOrigin -eq 'Dhcp' }).IPAddress; echo ('Access on: http://' + $ip + ':4343')\" && ng serve --host 0.0.0.0 --port 4343",
     "start": "ng serve",
     "push:libs": "git push --follow-tags",
     "ver:dom:patch": "npm version patch --prefix projects/tool-dom",
