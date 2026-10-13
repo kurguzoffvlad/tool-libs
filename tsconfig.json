@@ -6,18 +6,10 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "tool-config-to-lib": [
-        "dist/tool-config-to-lib"
-      ],
-      "tool-dom": [
-        "dist/tool-dom"
-      ],
-      "tool-exchange": [
-        "dist/tool-exchange"
-      ],
-      "tool-width-page": [
-        "dist/tool-width-page"
-      ]
+      "tool-config-to-lib": ["dist/tool-config-to-lib"],
+      "tool-dom": ["dist/tool-dom"],
+      "tool-exchange": ["dist/tool-exchange"],
+      "tool-width-page": ["dist/tool-width-page"]
     },
     "strict": true,
     "noImplicitOverride": true,

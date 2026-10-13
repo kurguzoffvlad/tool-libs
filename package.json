@@ -14,22 +14,6 @@
     "publish:exchange": "cd projects/tool-exchange && git push --follow-tags && cd ../.. && ng build tool-exchange && cd dist/tool-exchange && npm publish --access public",
     "publish:width": "cd projects/tool-width-page && git push --follow-tags && cd ../.. && ng build tool-width-page && cd dist/tool-width-page && npm publish --access public",
 
-    "release:config:major": "npm run ver:config:major && npm run publish:config",
-    "release:config:minor": "npm run ver:config:minor && npm run publish:config",
-    "release:config:patch": "npm run ver:config:patch && npm run publish:config",
-
-    "release:dom:major": "npm run ver:dom:major && npm run publish:dom",
-    "release:dom:minor": "npm run ver:dom:minor && npm run publish:dom",
-    "release:dom:patch": "npm run ver:dom:patch && npm run publish:dom",
-
-    "release:exchange:major": "npm run ver:exchange:major && npm run publish:exchange",
-    "release:exchange:minor": "npm run ver:exchange:minor && npm run publish:exchange",
-    "release:exchange:patch": "npm run ver:exchange:patch && npm run publish:exchange",
-
-    "release:width:major": "npm run ver:width:major && npm run publish:width",
-    "release:width:minor": "npm run ver:width:minor && npm run publish:width",
-    "release:width:patch": "npm run ver:width:patch && npm run publish:width",
-
     "ver:config:major": "npm version major --prefix projects/tool-config-to-lib",
     "ver:config:minor": "npm version minor --prefix projects/tool-config-to-lib",
     "ver:config:patch": "npm version patch --prefix projects/tool-config-to-lib",
@@ -44,7 +28,23 @@
 
     "ver:width:major": "npm version major --prefix projects/tool-width-page",
     "ver:width:minor": "npm version minor --prefix projects/tool-width-page",
-    "ver:width:patch": "npm version patch --prefix projects/tool-width-page"
+    "ver:width:patch": "npm version patch --prefix projects/tool-width-page",
+
+    "release:config:major": "npm run ver:config:major && npm run publish:config",
+    "release:config:minor": "npm run ver:config:minor && npm run publish:config",
+    "release:config:patch": "npm run ver:config:patch && npm run publish:config",
+
+    "release:dom:major": "npm run ver:dom:major && npm run publish:dom",
+    "release:dom:minor": "npm run ver:dom:minor && npm run publish:dom",
+    "release:dom:patch": "npm run ver:dom:patch && npm run publish:dom",
+
+    "release:exchange:major": "npm run ver:exchange:major && npm run publish:exchange",
+    "release:exchange:minor": "npm run ver:exchange:minor && npm run publish:exchange",
+    "release:exchange:patch": "npm run ver:exchange:patch && npm run publish:exchange",
+
+    "release:width:major": "npm run ver:width:major && npm run publish:width",
+    "release:width:minor": "npm run ver:width:minor && npm run publish:width",
+    "release:width:patch": "npm run ver:width:patch && npm run publish:width"
   },
   "private": true,
   "dependencies": {
@@ -57,7 +57,7 @@
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
     "rxjs": "~7.8.0",
-    "tool-config-to-lib": "0.0.3",
+    "tool-config-to-lib": "1.0.0",
     "tool-log": "0.0.17",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
